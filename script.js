@@ -77,9 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting){
           // stagger siblings slightly for a nicer cascade
-          const delay = Array.from(entry.target.parentElement.children)
+          const index = Array.from(entry.target.parentElement.children)
             .filter(el => el.classList.contains('reveal'))
-            .indexOf(entry.target) * 60;
+            .indexOf(entry.target);
+          const delay = Math.min(index * 60, 240); // cap so long grids stay snappy
           entry.target.style.transitionDelay = delay + 'ms';
           entry.target.classList.remove('pre-reveal');
           entry.target.classList.add('in-view');

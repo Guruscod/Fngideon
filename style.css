@@ -382,7 +382,21 @@ button{ font-family:inherit; cursor:pointer; }
   align-items:center;
   justify-content:center;
   position:relative;
+  overflow:hidden;
   z-index:2;
+}
+.avatar-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  z-index:2;
+}
+.avatar-fallback{
+  position:relative;
+  z-index:1;
 }
 .avatar-ring{
   position:absolute;
@@ -692,17 +706,33 @@ button{ font-family:inherit; cursor:pointer; }
 /* ---------- SCROLL REVEAL ----------
    Visible by default so content always shows, even if JS is
    blocked or slow. JS adds "pre-reveal" on load, then swaps it
-   for "in-view" as each element scrolls into place. */
+   for "in-view" as each element scrolls into place.
+
+   Each element's "hidden" offset is stored in --reveal-from,
+   set per-variant via [data-reveal]. This keeps .pre-reveal and
+   .in-view at EQUAL specificity, so there's no risk of the
+   hidden state ever out-ranking the revealed state.
+
+   Variants via [data-reveal]:
+     (default / "up")  fade + rise from below
+     "left"            fade + slide in from the left
+     "right"           fade + slide in from the right
+     "scale"           fade + noticeable scale-up (used for cards/grids)
+*/
 .reveal{
+  --reveal-from: translateY(28px);
   opacity:1;
   transform:none;
-  transition:opacity .7s ease, transform .7s ease;
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+  will-change:opacity, transform;
 }
-.reveal.pre-reveal{
-  opacity:0;
-  transform:translateY(28px);
-}
-.reveal.in-view{ opacity:1; transform:translateY(0); }
+
+.reveal[data-reveal="left"]{ --reveal-from: translateX(-56px); }
+.reveal[data-reveal="right"]{ --reveal-from: translateX(56px); }
+.reveal[data-reveal="scale"]{ --reveal-from: translateY(20px) scale(0.88); }
+
+.reveal.pre-reveal{ opacity:0; transform:var(--reveal-from); }
+.reveal.in-view{ opacity:1; transform:none; }
 
 /* ==========================================================
    RESPONSIVE
