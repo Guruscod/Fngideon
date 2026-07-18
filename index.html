@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gideon Norkplim Fiadowu — Graphic Designer &amp; Creative</title>
+<meta name="description" content="Portfolio of Gideon Norkplim Fiadowu — Graphic Design, Content Creation, Web Design, Social Media Management and Virtual Assistance.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Scroll progress bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Cursor spotlight (desktop only, handled in JS) -->
+<div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">FnGideon<span class="dot">.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-small btn-fill nav-cta">Let's Talk</a>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#skills" class="mobile-link">Skills</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#work" class="mobile-link">Work</a>
+  <a href="#testimonials" class="mobile-link">Reviews</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow reveal">Portfolio — Ghana 🇬🇭</p>
+      <h1 class="hero-title">
+        <span class="reveal">Hi, I'm <span class="mark">Gideon</span></span>
+        <span class="reveal">Norkplim Fiadowu.</span>
+        <span class="reveal hero-title-sub">I design, create &amp; build brands.</span>
+      </h1>
+      <p class="hero-text reveal">
+        A multi-skilled creative helping brands look sharp and sound clear —
+        across graphic design, content creation, web design, social media
+        management and virtual assistance.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#work" class="btn btn-fill">View My Work</a>
+        <a href="https://wa.me/233559414076" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">
+      <span>Scroll</span>
+      <svg width="14" height="22" viewBox="0 0 14 22" fill="none"><rect x="1" y="1" width="12" height="20" rx="6" stroke="currentColor" stroke-width="1.5"/><circle class="scroll-dot" cx="7" cy="6" r="2" fill="currentColor"/></svg>
+    </a>
+  </section>
+
+  <!-- MARQUEE TAPE -->
+  <div class="tape">
+    <div class="tape-track">
+      <span>Graphic Design</span><span>★</span>
+      <span>Content Creation</span><span>★</span>
+      <span>Web Design</span><span>★</span>
+      <span>Social Media Management</span><span>★</span>
+      <span>Virtual Assistance</span><span>★</span>
+      <span>Brand Identity</span><span>★</span>
+      <span>Graphic Design</span><span>★</span>
+      <span>Content Creation</span><span>★</span>
+      <span>Web Design</span><span>★</span>
+      <span>Social Media Management</span><span>★</span>
+      <span>Virtual Assistance</span><span>★</span>
+      <span>Brand Identity</span><span>★</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner about-grid">
+      <div class="about-visual reveal">
+        <div class="avatar-frame">
+          <div class="avatar-circle">GNF</div>
+          <div class="avatar-ring"></div>
+          <span class="badge-tag">Based in Ghana</span>
+        </div>
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow reveal">About Me</p>
+        <h2 class="section-title reveal">Design with a purpose. Content with a voice.</h2>
+        <p class="reveal">
+          I'm Gideon Norkplim Fiadowu, a Ghana-based creative who enjoys turning
+          simple ideas into visuals and content that people remember. I trained
+          through ALX's Creative track and Virtual Assistant programme, and I
+          have worked with small businesses and brands on design, websites and
+          day-to-day content needs.
+        </p>
+        <p class="reveal">
+          I like to keep things simple: clear communication, clean design, and
+          work that is delivered on time. Whether you need a logo, a landing
+          page, a month of social posts, or an extra pair of hands to manage
+          your inbox and schedule, I bring the same attention to detail to
+          every task.
+        </p>
+
+        <ul class="fact-list reveal">
+          <li><span class="fact-num">01</span> Graphic &amp; Brand Design</li>
+          <li><span class="fact-num">02</span> Content Creation &amp; Copywriting</li>
+          <li><span class="fact-num">03</span> Web Design &amp; No-Code Builds</li>
+          <li><span class="fact-num">04</span> Social Media Management</li>
+          <li><span class="fact-num">05</span> Virtual Assistance</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-outline reveal">Work With Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="section-inner">
+      <p class="eyebrow reveal light">What I Do Best</p>
+      <h2 class="section-title reveal light">My Skills</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="27" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M4 34l10-12 8 8 6-7 8 11H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Graphic Design</h3>
+          <p>Logos, brand kits, flyers and print-ready designs that give a business a clear, consistent look.</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M6 10h28M6 20h28M6 30h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="34" cy="30" r="3" fill="currentColor"/></svg>
+          </div>
+          <h3>Content Creation</h3>
+          <p>Captions, scripts and short-form content that sound human and speak to the right audience.</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="7" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 14h32" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10.5" r="1.2" fill="currentColor"/><circle cx="13" cy="10.5" r="1.2" fill="currentColor"/></svg>
+          </div>
+          <h3>Web Design</h3>
+          <p>Clean, responsive websites and landing pages built to load fast and work on every screen.</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="2"/><path d="M20 12v8l6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Social Media Management</h3>
+          <p>Content calendars, posting schedules and page growth strategy across Instagram, Facebook and X.</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="14" stroke="currentColor" stroke-width="2"/><path d="M14 20h12M14 26h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 12v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Virtual Assistance</h3>
+          <p>Inbox and calendar management, research and day-to-day admin support so founders can focus.</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M20 4l4.5 9.2L34 14.6l-7 6.8 1.6 9.6L20 26.6l-8.6 4.4L13 21.4l-7-6.8 9.5-1.4L20 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Brand Identity</h3>
+          <p>Full identity systems — colour, type and voice — so a brand feels the same everywhere it shows up.</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="93"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <p class="eyebrow reveal">Services</p>
+      <h2 class="section-title reveal">How I Can Help You</h2>
+      <p class="section-lead reveal">Pick a service below, or combine a few — most clients need more than one of these working together.</p>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <h3>Logo &amp; Brand Design</h3>
+          <p>A logo, colour palette and style guide that make a business instantly recognisable.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Social Media Content</h3>
+          <p>Posts, reels covers and templates designed to stop the scroll and keep a page looking consistent.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Website Design</h3>
+          <p>Simple, responsive websites for portfolios, small businesses and personal brands.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Content Writing</h3>
+          <p>Captions, blog posts and product copy written in a clear, natural voice.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Page Management</h3>
+          <p>Full social media handling — planning, posting, replying and tracking what works.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Virtual Assistance</h3>
+          <p>Admin support, scheduling and research, so you can spend your time on what matters most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="section-inner">
+      <p class="eyebrow reveal light">Selected Work</p>
+      <h2 class="section-title reveal light">Recent Projects</h2>
+      <p class="section-lead reveal light">A small sample of recent design and content work. Replace these with real project images any time.</p>
+
+      <div class="work-grid">
+        <article class="work-card reveal">
+          <div class="work-thumb thumb-1"><span class="work-tag">Brand Identity</span></div>
+          <h3>Brand Identity Refresh</h3>
+          <p>Logo, colours and templates for a small business rebrand.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-thumb thumb-2"><span class="work-tag">Social Media</span></div>
+          <h3>Instagram Content Series</h3>
+          <p>A month of posts and story templates for a lifestyle page.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-thumb thumb-3"><span class="work-tag">Web Design</span></div>
+          <h3>Portfolio Website Build</h3>
+          <p>A responsive one-page site for a freelance photographer.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-thumb thumb-4"><span class="work-tag">Print Design</span></div>
+          <h3>Event Flyer Set</h3>
+          <p>Flyers and posters for a community event, print and digital.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-thumb thumb-5"><span class="work-tag">Content</span></div>
+          <h3>Product Launch Copy</h3>
+          <p>Captions and a short script for a product launch reel.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-thumb thumb-6"><span class="work-tag">Branding</span></div>
+          <h3>Packaging Concept</h3>
+          <p>Label and packaging design concept for a food brand.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <p class="eyebrow reveal">Reviews</p>
+      <h2 class="section-title reveal">What Clients Say</h2>
+
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <p>"Gideon understood exactly what our brand needed. The designs came back clean and on brief, every time."</p>
+          <div class="testi-name">Sample Client — Small Business Owner</div>
+        </div>
+        <div class="testi-card reveal">
+          <p>"Our page finally feels consistent. Posting is on schedule and engagement has picked up since he took over."</p>
+          <div class="testi-name">Sample Client — Content Creator</div>
+        </div>
+        <div class="testi-card reveal">
+          <p>"Professional, easy to reach, and he delivers on time. Exactly what you want from a freelancer."</p>
+          <div class="testi-name">Sample Client — Startup Founder</div>
+        </div>
+      </div>
+      <p class="testi-note reveal">Placeholder reviews — swap these for real client feedback when ready.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner contact-grid">
+      <div class="contact-info reveal">
+        <p class="eyebrow light">Contact</p>
+        <h2 class="section-title light">Let's Build Something Great</h2>
+        <p class="light-text">
+          Have a project in mind? Tell me a little about it and I'll get back
+          to you within a day or two.
+        </p>
+
+        <div class="contact-line">
+          <span class="contact-label">Email</span>
+          <a href="mailto:hello@gideonfiadowu.com">hello@gideonfiadowu.com</a>
+        </div>
+        <div class="contact-line">
+          <span class="contact-label">Location</span>
+          <span>Ghana — available worldwide, remote</span>
+        </div>
+
+        <div class="socials">
+          <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+          <a href="#" class="social-link" aria-label="Fiverr">Fiverr</a>
+          <a href="#" class="social-link" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+
+        <button type="submit" class="btn btn-fill full-width">Send Message</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <a href="#top" class="logo">GNF<span class="dot">.</span></a>
+    <p>&copy; <span id="year"></span> Gideon Norkplim Fiadowu. All rights reserved.</p>
+    <a href="#top" class="to-top" aria-label="Back to top">↑ Top</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
