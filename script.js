@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const subject = encodeURIComponent(`Project enquiry from ${name}`);
       const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-      window.location.href = `mailto:hello@gideonfiadowu.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:fngideon1@gmail.com?subject=${subject}&body=${body}`;
 
       formNote.textContent = 'Opening your email app to send this message...';
       form.reset();
