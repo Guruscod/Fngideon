@@ -1,0 +1,454 @@
+/* ==========================================================
+   PORTFOLIO SHOWCASE — modular carousel sections
+   Graphic Design · Web Development · Content Creation · Photography
+
+   Self-contained: safe to drop into an existing page. Reuses the
+   host site's brand tokens (black/yellow) — override the :root
+   values below if you're integrating into a different palette.
+========================================================== */
+
+:root{
+  --psc-black: #0B0B0B;
+  --psc-black-soft: #141414;
+  --psc-line: rgba(255,255,255,0.10);
+  --psc-yellow: #FFD400;
+  --psc-yellow-deep: #F2B900;
+  --psc-white: #FFFFFF;
+  --psc-grey: #9a9a94;
+  --psc-grey-dim: rgba(255,255,255,0.55);
+
+  --psc-font-display: 'Archivo Black', sans-serif;
+  --psc-font-body: 'Space Grotesk', sans-serif;
+  --psc-font-mono: 'Space Mono', monospace;
+
+  --psc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --psc-radius: 18px;
+  --psc-gap: 28px;
+}
+
+.psc-section *{ box-sizing:border-box; }
+
+/* ---------- SECTION SHELL ---------- */
+.psc-section{
+  background:var(--psc-black);
+  color:var(--psc-white);
+  padding:120px 0;
+  overflow:hidden;
+}
+.psc-section + .psc-section{
+  border-top:1px solid var(--psc-line);
+}
+.psc-inner{
+  max-width:1320px;
+  margin:0 auto;
+  padding:0 40px;
+}
+
+.psc-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:64px;
+}
+.psc-heading{ max-width:640px; }
+.psc-eyebrow{
+  font-family:var(--psc-font-mono);
+  font-size:12.5px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--psc-yellow);
+  margin:0 0 16px;
+}
+.psc-title{
+  font-family:var(--psc-font-display);
+  font-size:clamp(32px, 4vw, 52px);
+  line-height:1.05;
+  margin:0 0 16px;
+  letter-spacing:-0.01em;
+}
+.psc-subtitle{
+  font-family:var(--psc-font-body);
+  font-size:17px;
+  line-height:1.6;
+  color:var(--psc-grey-dim);
+  margin:0;
+  font-weight:400;
+}
+
+/* Controls: arrows + counter, aligned right of the header on desktop */
+.psc-controls{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  flex-shrink:0;
+}
+.psc-counter{
+  font-family:var(--psc-font-mono);
+  font-size:14px;
+  color:var(--psc-grey-dim);
+  letter-spacing:0.04em;
+  min-width:64px;
+  text-align:center;
+  font-variant-numeric:tabular-nums;
+}
+.psc-counter .psc-current{
+  color:var(--psc-white);
+  display:inline-block;
+  transition:transform .35s var(--psc-ease), opacity .35s var(--psc-ease);
+}
+.psc-counter.psc-bump .psc-current{
+  animation:psc-count-bump .35s var(--psc-ease);
+}
+@keyframes psc-count-bump{
+  0%{ transform:translateY(6px); opacity:0; }
+  100%{ transform:translateY(0); opacity:1; }
+}
+
+.psc-arrows{ display:flex; gap:10px; }
+.psc-arrow{
+  width:48px; height:48px;
+  border-radius:50%;
+  border:1px solid var(--psc-line);
+  background:transparent;
+  color:var(--psc-white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:border-color .25s var(--psc-ease), background .25s var(--psc-ease), transform .25s var(--psc-ease);
+}
+.psc-arrow svg{ width:18px; height:18px; }
+.psc-arrow:hover{
+  border-color:var(--psc-yellow);
+  background:var(--psc-yellow);
+  color:var(--psc-black);
+}
+.psc-arrow:active{ transform:scale(0.94); }
+.psc-arrow:focus-visible,
+.psc-btn:focus-visible,
+.psc-view-btn:focus-visible{
+  outline:2px solid var(--psc-yellow);
+  outline-offset:3px;
+}
+
+/* ---------- TRACK / VIEWPORT ---------- */
+.psc-viewport{
+  overflow:hidden;
+  cursor:grab;
+  margin:0 -40px;
+  padding:0 40px;
+}
+.psc-viewport:active{ cursor:grabbing; }
+.psc-track{
+  display:flex;
+  gap:var(--psc-gap);
+  will-change:transform;
+  transition:transform .55s var(--psc-ease);
+}
+.psc-track.psc-dragging{ transition:none; }
+
+.psc-track:focus-visible{
+  outline:2px solid var(--psc-yellow);
+  outline-offset:6px;
+}
+
+/* Card widths per breakpoint — ~4 up desktop, 2 up tablet, 1 up mobile */
+.psc-slide{
+  flex:0 0 calc(25% - (var(--psc-gap) * 3 / 4));
+  user-select:none;
+}
+@media (max-width:1180px){
+  .psc-slide{ flex-basis:calc(33.333% - (var(--psc-gap) * 2 / 3)); }
+}
+@media (max-width:900px){
+  .psc-slide{ flex-basis:calc(50% - (var(--psc-gap) / 2)); }
+}
+@media (max-width:600px){
+  .psc-slide{ flex-basis:86%; }
+}
+
+.psc-slide img{ pointer-events:none; }
+
+/* ==========================================================
+   CARD — Graphic Design
+========================================================== */
+.psc-card{
+  background:var(--psc-black-soft);
+  border:1px solid var(--psc-line);
+  border-radius:var(--psc-radius);
+  overflow:hidden;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  transition:transform .45s var(--psc-ease), border-color .45s var(--psc-ease);
+}
+.psc-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,212,0,0.35);
+}
+.psc-card-media{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:#1a1a1a;
+}
+.psc-card-media img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .7s var(--psc-ease);
+}
+.psc-card:hover .psc-card-media img{ transform:scale(1.08); }
+
+.psc-card-overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(11,11,11,0) 40%, rgba(11,11,11,0.85) 100%);
+  opacity:0;
+  transition:opacity .4s var(--psc-ease);
+  display:flex;
+  align-items:flex-end;
+  padding:22px;
+}
+.psc-card:hover .psc-card-overlay{ opacity:1; }
+
+.psc-view-btn{
+  font-family:var(--psc-font-mono);
+  font-size:12.5px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--psc-black);
+  background:var(--psc-yellow);
+  border:none;
+  padding:11px 18px;
+  border-radius:999px;
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .4s var(--psc-ease) .05s, transform .4s var(--psc-ease) .05s;
+}
+.psc-card:hover .psc-view-btn{ opacity:1; transform:translateY(0); }
+
+.psc-card-body{ padding:22px 22px 24px; }
+.psc-card-category{
+  font-family:var(--psc-font-mono);
+  font-size:11.5px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--psc-yellow-deep);
+  margin:0 0 8px;
+}
+.psc-card-title{
+  font-family:var(--psc-font-display);
+  font-size:16px;
+  font-weight:400;
+  margin:0 0 8px;
+  line-height:1.3;
+}
+.psc-card-desc{
+  font-size:13.5px;
+  color:var(--psc-grey-dim);
+  margin:0 0 14px;
+  line-height:1.5;
+}
+.psc-tag-row{ display:flex; flex-wrap:wrap; gap:6px; }
+.psc-tag{
+  font-family:var(--psc-font-mono);
+  font-size:10.5px;
+  letter-spacing:0.03em;
+  color:var(--psc-grey-dim);
+  border:1px solid var(--psc-line);
+  border-radius:999px;
+  padding:4px 10px;
+}
+
+/* ==========================================================
+   CARD — Web Development (browser + phone mockups)
+========================================================== */
+.psc-web-card{
+  background:var(--psc-black-soft);
+  border:1px solid var(--psc-line);
+  border-radius:var(--psc-radius);
+  padding:20px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  transition:transform .45s var(--psc-ease), border-color .45s var(--psc-ease);
+}
+.psc-web-card:hover{ transform:translateY(-6px); border-color:rgba(255,212,0,0.35); }
+
+.psc-mockups{
+  position:relative;
+  margin-bottom:20px;
+}
+.psc-browser{
+  border-radius:10px;
+  overflow:hidden;
+  background:#1a1a1a;
+  border:1px solid var(--psc-line);
+}
+.psc-browser-bar{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:9px 12px;
+  background:#1f1f1f;
+  border-bottom:1px solid var(--psc-line);
+}
+.psc-browser-dot{ width:8px; height:8px; border-radius:50%; background:#3a3a3a; }
+.psc-browser-screen{ aspect-ratio:16/10; overflow:hidden; }
+.psc-browser-screen img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s var(--psc-ease); }
+.psc-web-card:hover .psc-browser-screen img{ transform:scale(1.06); }
+
+.psc-phone{
+  position:absolute;
+  right:-6px; bottom:-22px;
+  width:30%;
+  border-radius:14px;
+  overflow:hidden;
+  background:#1a1a1a;
+  border:3px solid #262626;
+  box-shadow:0 14px 30px rgba(0,0,0,0.45);
+}
+.psc-phone-screen{ aspect-ratio:9/17; overflow:hidden; }
+.psc-phone-screen img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+.psc-web-body{ padding:14px 4px 4px; flex:1; display:flex; flex-direction:column; }
+.psc-web-title{
+  font-family:var(--psc-font-display);
+  font-size:16px; font-weight:400;
+  margin:0 0 8px;
+}
+.psc-web-desc{
+  font-size:13.5px;
+  color:var(--psc-grey-dim);
+  margin:0 0 14px;
+  line-height:1.5;
+}
+.psc-badge-row{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px; }
+.psc-badge{
+  font-family:var(--psc-font-mono);
+  font-size:10.5px;
+  color:var(--psc-yellow-deep);
+  border:1px solid rgba(255,212,0,0.25);
+  background:rgba(255,212,0,0.06);
+  border-radius:999px;
+  padding:4px 10px;
+}
+.psc-btn-row{ display:flex; gap:10px; margin-top:auto; }
+.psc-btn{
+  flex:1;
+  text-align:center;
+  font-family:var(--psc-font-mono);
+  font-size:12px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  padding:11px 12px;
+  border-radius:999px;
+  text-decoration:none;
+  transition:transform .25s var(--psc-ease), background .25s var(--psc-ease), color .25s var(--psc-ease);
+}
+.psc-btn-primary{ background:var(--psc-yellow); color:var(--psc-black); border:1px solid var(--psc-yellow); }
+.psc-btn-primary:hover{ transform:translateY(-2px); }
+.psc-btn-ghost{ background:transparent; color:var(--psc-white); border:1px solid var(--psc-line); }
+.psc-btn-ghost:hover{ border-color:var(--psc-yellow); color:var(--psc-yellow); transform:translateY(-2px); }
+
+/* ==========================================================
+   CARD — Content Creation (video thumbnail)
+========================================================== */
+.psc-video-card{
+  background:var(--psc-black-soft);
+  border:1px solid var(--psc-line);
+  border-radius:var(--psc-radius);
+  overflow:hidden;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  transition:transform .45s var(--psc-ease), border-color .45s var(--psc-ease);
+}
+.psc-video-card:hover{ transform:translateY(-6px); border-color:rgba(255,212,0,0.35); }
+
+.psc-video-media{
+  position:relative;
+  aspect-ratio:9/12;
+  overflow:hidden;
+  background:#1a1a1a;
+}
+.psc-video-media img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .7s var(--psc-ease);
+}
+.psc-video-card:hover .psc-video-media img{ transform:scale(1.08); }
+
+.psc-video-media::after{
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(11,11,11,0.05) 0%, rgba(11,11,11,0.65) 100%);
+}
+.psc-play{
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%) scale(1);
+  width:60px; height:60px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.14);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,0.4);
+  display:flex; align-items:center; justify-content:center;
+  z-index:2;
+  transition:transform .4s var(--psc-ease), background .4s var(--psc-ease);
+}
+.psc-play svg{ width:18px; height:18px; margin-left:2px; fill:var(--psc-white); }
+.psc-video-card:hover .psc-play{ transform:translate(-50%,-50%) scale(1.1); background:var(--psc-yellow); }
+.psc-video-card:hover .psc-play svg{ fill:var(--psc-black); }
+
+.psc-platform{
+  position:absolute;
+  top:16px; left:16px;
+  z-index:2;
+  font-family:var(--psc-font-mono);
+  font-size:10.5px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  background:rgba(11,11,11,0.6);
+  border:1px solid var(--psc-line);
+  border-radius:999px;
+  padding:5px 11px;
+  color:var(--psc-white);
+}
+
+.psc-video-body{ padding:20px; }
+.psc-video-title{
+  font-family:var(--psc-font-display);
+  font-size:15.5px; font-weight:400;
+  margin:0 0 8px;
+  line-height:1.3;
+}
+.psc-video-desc{
+  font-size:13.5px;
+  color:var(--psc-grey-dim);
+  margin:0 0 16px;
+  line-height:1.5;
+}
+
+/* ---------- HEADER RESPONSIVE ---------- */
+@media (max-width:760px){
+  .psc-section{ padding:80px 0; }
+  .psc-inner{ padding:0 22px; }
+  .psc-viewport{ margin:0 -22px; padding:0 22px; }
+  .psc-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:28px;
+    margin-bottom:40px;
+  }
+  .psc-controls{ align-self:flex-end; }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce){
+  .psc-section *{
+    animation-duration:0.01ms !important;
+    transition-duration:0.01ms !important;
+  }
+}

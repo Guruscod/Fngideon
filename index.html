@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
 
@@ -249,46 +250,607 @@
     </div>
   </section>
 
-  <!-- WORK -->
-  <section class="work" id="work">
-    <div class="section-inner">
-      <p class="eyebrow reveal light">Selected Work</p>
-      <h2 class="section-title reveal light">Recent Projects</h2>
-      <p class="section-lead reveal light">A small sample of my recent design and content work.</p>
+  <!-- WORK / PORTFOLIO SHOWCASE — Graphic Design, Web Dev, Content Creation -->
+  <section class="work-shell" id="work" aria-label="Portfolio showcase">
+  <section class="psc-section" aria-label="Graphic design portfolio">
+    <div class="psc-inner">
 
-      <div class="work-grid">
-        <article class="work-card reveal" data-reveal="scale">
-          <div class="work-thumb thumb-1"><span class="work-tag">Brand Identity</span></div>
-          <h3>Brand Identity Refresh</h3>
-          <p>Logo, colours and templates for a small business rebrand.</p>
-        </article>
-        <article class="work-card reveal" data-reveal="scale">
-          <div class="work-thumb thumb-2"><span class="work-tag">Social Media</span></div>
-          <h3>Instagram Content Series</h3>
-          <p>A month of posts and story templates for a lifestyle page.</p>
-        </article>
-        <article class="work-card reveal" data-reveal="scale">
-          <div class="work-thumb thumb-3"><span class="work-tag">Web Design</span></div>
-          <h3>Portfolio Website Build</h3>
-          <p>A responsive one-page site for a freelance photographer.</p>
-        </article>
-        <article class="work-card reveal" data-reveal="scale">
-          <div class="work-thumb thumb-4"><span class="work-tag">Print Design</span></div>
-          <h3>Event Flyer Set</h3>
-          <p>Flyers and posters for a community event, print and digital.</p>
-        </article>
-        <article class="work-card reveal" data-reveal="scale">
-          <div class="work-thumb thumb-5"><span class="work-tag">Content</span></div>
-          <h3>Product Launch Copy</h3>
-          <p>Captions and a short script for a product launch reel.</p>
-        </article>
-        <article class="work-card reveal" data-reveal="scale">
-          <div class="work-thumb thumb-6"><span class="work-tag">Branding</span></div>
-          <h3>Packaging Concept</h3>
-          <p>Label and packaging design concept for a food brand.</p>
-        </article>
+      <div class="psc-header">
+        <div class="psc-heading reveal">
+          <p class="psc-eyebrow">Selected Work</p>
+          <h2 class="psc-title">Graphic Design</h2>
+          <p class="psc-subtitle">Visual identities, branding, posters, flyers, social media creatives, and marketing materials.</p>
+        </div>
+
+        <div class="psc-controls">
+          <span class="psc-counter" role="status" aria-live="polite">
+            <span class="psc-current">01</span> / <span class="psc-total">08</span>
+          </span>
+          <div class="psc-arrows">
+            <button class="psc-arrow psc-prev" aria-label="Previous design project">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="psc-arrow psc-next" aria-label="Next design project">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
       </div>
+
+      <div class="psc-carousel" id="carousel-design">
+        <div class="psc-viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Graphic design projects">
+          <ul class="psc-track" role="list" style="list-style:none; margin:0; padding:0;">
+
+            <!-- Card 1 -->
+            <li class="psc-slide" role="listitem">
+              <article class="psc-card">
+                <div class="psc-card-media">
+                  <img src="https://picsum.photos/seed/gd1/700/875" alt="Brand identity poster design" loading="lazy" width="700" height="875">
+                  <div class="psc-card-overlay">
+                    <button class="psc-view-btn" type="button">View Project</button>
+                  </div>
+                </div>
+                <div class="psc-card-body">
+                  <p class="psc-card-category">Brand Identity</p>
+                  <h3 class="psc-card-title">Solace Coffee — Full Rebrand</h3>
+                  <p class="psc-card-desc">Logo, packaging and in-store signage for a specialty coffee roaster.</p>
+                  <div class="psc-tag-row">
+                    <span class="psc-tag">Illustrator</span>
+                    <span class="psc-tag">Photoshop</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 2 -->
+            <li class="psc-slide" role="listitem">
+              <article class="psc-card">
+                <div class="psc-card-media">
+                  <img src="https://picsum.photos/seed/gd2/700/875" alt="Event poster design" loading="lazy" width="700" height="875">
+                  <div class="psc-card-overlay">
+                    <button class="psc-view-btn" type="button">View Project</button>
+                  </div>
+                </div>
+                <div class="psc-card-body">
+                  <p class="psc-card-category">Poster Design</p>
+                  <h3 class="psc-card-title">Accra Music Week 2026</h3>
+                  <p class="psc-card-desc">Festival poster series and outdoor banner set.</p>
+                  <div class="psc-tag-row">
+                    <span class="psc-tag">Illustrator</span>
+                    <span class="psc-tag">InDesign</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 3 -->
+            <li class="psc-slide" role="listitem">
+              <article class="psc-card">
+                <div class="psc-card-media">
+                  <img src="https://picsum.photos/seed/gd3/700/875" alt="Social media creative design" loading="lazy" width="700" height="875">
+                  <div class="psc-card-overlay">
+                    <button class="psc-view-btn" type="button">View Project</button>
+                  </div>
+                </div>
+                <div class="psc-card-body">
+                  <p class="psc-card-category">Social Media</p>
+                  <h3 class="psc-card-title">Nimo Skincare — Launch Kit</h3>
+                  <p class="psc-card-desc">30-post content system for a product launch.</p>
+                  <div class="psc-tag-row">
+                    <span class="psc-tag">Figma</span>
+                    <span class="psc-tag">Photoshop</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 4 -->
+            <li class="psc-slide" role="listitem">
+              <article class="psc-card">
+                <div class="psc-card-media">
+                  <img src="https://picsum.photos/seed/gd4/700/875" alt="Flyer design" loading="lazy" width="700" height="875">
+                  <div class="psc-card-overlay">
+                    <button class="psc-view-btn" type="button">View Project</button>
+                  </div>
+                </div>
+                <div class="psc-card-body">
+                  <p class="psc-card-category">Flyer Design</p>
+                  <h3 class="psc-card-title">Pulse Fitness — Open Day</h3>
+                  <p class="psc-card-desc">Print and digital flyer set for a gym launch event.</p>
+                  <div class="psc-tag-row">
+                    <span class="psc-tag">Illustrator</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 5 -->
+            <li class="psc-slide" role="listitem">
+              <article class="psc-card">
+                <div class="psc-card-media">
+                  <img src="https://picsum.photos/seed/gd5/700/875" alt="Packaging design" loading="lazy" width="700" height="875">
+                  <div class="psc-card-overlay">
+                    <button class="psc-view-btn" type="button">View Project</button>
+                  </div>
+                </div>
+                <div class="psc-card-body">
+                  <p class="psc-card-category">Packaging</p>
+                  <h3 class="psc-card-title">Terra Foods — Label System</h3>
+                  <p class="psc-card-desc">Label and box design across a 6-product food line.</p>
+                  <div class="psc-tag-row">
+                    <span class="psc-tag">Illustrator</span>
+                    <span class="psc-tag">Photoshop</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 6 -->
+            <li class="psc-slide" role="listitem">
+              <article class="psc-card">
+                <div class="psc-card-media">
+                  <img src="https://picsum.photos/seed/gd6/700/875" alt="Logo design" loading="lazy" width="700" height="875">
+                  <div class="psc-card-overlay">
+                    <button class="psc-view-btn" type="button">View Project</button>
+                  </div>
+                </div>
+                <div class="psc-card-body">
+                  <p class="psc-card-category">Logo Design</p>
+                  <h3 class="psc-card-title">Northline Logistics</h3>
+                  <p class="psc-card-desc">Wordmark and icon system for a freight company.</p>
+                  <div class="psc-tag-row">
+                    <span class="psc-tag">Illustrator</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 7 -->
+            <li class="psc-slide" role="listitem">
+              <article class="psc-card">
+                <div class="psc-card-media">
+                  <img src="https://picsum.photos/seed/gd7/700/875" alt="Marketing brochure design" loading="lazy" width="700" height="875">
+                  <div class="psc-card-overlay">
+                    <button class="psc-view-btn" type="button">View Project</button>
+                  </div>
+                </div>
+                <div class="psc-card-body">
+                  <p class="psc-card-category">Print Collateral</p>
+                  <h3 class="psc-card-title">Baobab Realty — Brochure</h3>
+                  <p class="psc-card-desc">Property brochure and pull-up banner set.</p>
+                  <div class="psc-tag-row">
+                    <span class="psc-tag">InDesign</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 8 -->
+            <li class="psc-slide" role="listitem">
+              <article class="psc-card">
+                <div class="psc-card-media">
+                  <img src="https://picsum.photos/seed/gd8/700/875" alt="Brand style guide design" loading="lazy" width="700" height="875">
+                  <div class="psc-card-overlay">
+                    <button class="psc-view-btn" type="button">View Project</button>
+                  </div>
+                </div>
+                <div class="psc-card-body">
+                  <p class="psc-card-category">Style Guide</p>
+                  <h3 class="psc-card-title">Ama & Co. Brand Book</h3>
+                  <p class="psc-card-desc">30-page identity guideline document.</p>
+                  <div class="psc-tag-row">
+                    <span class="psc-tag">Illustrator</span>
+                    <span class="psc-tag">InDesign</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
     </div>
+  </section>
+
+  <!-- ======================================================
+       SECTION 2 — WEB DEVELOPMENT
+  ======================================================= -->
+  <section class="psc-section" aria-label="Web development portfolio">
+    <div class="psc-inner">
+
+      <div class="psc-header">
+        <div class="psc-heading reveal">
+          <p class="psc-eyebrow">Selected Work</p>
+          <h2 class="psc-title">Web Development</h2>
+          <p class="psc-subtitle">Responsive websites and digital experiences built for performance.</p>
+        </div>
+
+        <div class="psc-controls">
+          <span class="psc-counter" role="status" aria-live="polite">
+            <span class="psc-current">01</span> / <span class="psc-total">06</span>
+          </span>
+          <div class="psc-arrows">
+            <button class="psc-arrow psc-prev" aria-label="Previous web project">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="psc-arrow psc-next" aria-label="Next web project">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="psc-carousel" id="carousel-web">
+        <div class="psc-viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Web development projects">
+          <ul class="psc-track" role="list" style="list-style:none; margin:0; padding:0;">
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-web-card">
+                <div class="psc-mockups">
+                  <div class="psc-browser">
+                    <div class="psc-browser-bar">
+                      <span class="psc-browser-dot"></span><span class="psc-browser-dot"></span><span class="psc-browser-dot"></span>
+                    </div>
+                    <div class="psc-browser-screen">
+                      <img src="https://picsum.photos/seed/web1/800/500" alt="Desktop screenshot of Solace Coffee website" loading="lazy" width="800" height="500">
+                    </div>
+                  </div>
+                  <div class="psc-phone">
+                    <div class="psc-phone-screen">
+                      <img src="https://picsum.photos/seed/web1m/300/560" alt="Mobile screenshot of Solace Coffee website" loading="lazy" width="300" height="560">
+                    </div>
+                  </div>
+                </div>
+                <div class="psc-web-body">
+                  <h3 class="psc-web-title">Solace Coffee — Online Store</h3>
+                  <p class="psc-web-desc">A fast, mobile-first storefront with a custom cart experience.</p>
+                  <div class="psc-badge-row">
+                    <span class="psc-badge">HTML/CSS</span>
+                    <span class="psc-badge">JavaScript</span>
+                    <span class="psc-badge">Shopify</span>
+                  </div>
+                  <div class="psc-btn-row">
+                    <a href="#" class="psc-btn psc-btn-primary">Live Demo</a>
+                    <a href="#" class="psc-btn psc-btn-ghost">GitHub</a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-web-card">
+                <div class="psc-mockups">
+                  <div class="psc-browser">
+                    <div class="psc-browser-bar">
+                      <span class="psc-browser-dot"></span><span class="psc-browser-dot"></span><span class="psc-browser-dot"></span>
+                    </div>
+                    <div class="psc-browser-screen">
+                      <img src="https://picsum.photos/seed/web2/800/500" alt="Desktop screenshot of Pulse Fitness website" loading="lazy" width="800" height="500">
+                    </div>
+                  </div>
+                  <div class="psc-phone">
+                    <div class="psc-phone-screen">
+                      <img src="https://picsum.photos/seed/web2m/300/560" alt="Mobile screenshot of Pulse Fitness website" loading="lazy" width="300" height="560">
+                    </div>
+                  </div>
+                </div>
+                <div class="psc-web-body">
+                  <h3 class="psc-web-title">Pulse Fitness — Booking Site</h3>
+                  <p class="psc-web-desc">Class schedules and membership sign-up built for speed.</p>
+                  <div class="psc-badge-row">
+                    <span class="psc-badge">React</span>
+                    <span class="psc-badge">Tailwind</span>
+                  </div>
+                  <div class="psc-btn-row">
+                    <a href="#" class="psc-btn psc-btn-primary">Live Demo</a>
+                    <a href="#" class="psc-btn psc-btn-ghost">GitHub</a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-web-card">
+                <div class="psc-mockups">
+                  <div class="psc-browser">
+                    <div class="psc-browser-bar">
+                      <span class="psc-browser-dot"></span><span class="psc-browser-dot"></span><span class="psc-browser-dot"></span>
+                    </div>
+                    <div class="psc-browser-screen">
+                      <img src="https://picsum.photos/seed/web3/800/500" alt="Desktop screenshot of Baobab Realty website" loading="lazy" width="800" height="500">
+                    </div>
+                  </div>
+                  <div class="psc-phone">
+                    <div class="psc-phone-screen">
+                      <img src="https://picsum.photos/seed/web3m/300/560" alt="Mobile screenshot of Baobab Realty website" loading="lazy" width="300" height="560">
+                    </div>
+                  </div>
+                </div>
+                <div class="psc-web-body">
+                  <h3 class="psc-web-title">Baobab Realty — Listings</h3>
+                  <p class="psc-web-desc">Property search with map filtering and saved listings.</p>
+                  <div class="psc-badge-row">
+                    <span class="psc-badge">Next.js</span>
+                    <span class="psc-badge">Tailwind</span>
+                  </div>
+                  <div class="psc-btn-row">
+                    <a href="#" class="psc-btn psc-btn-primary">Live Demo</a>
+                    <a href="#" class="psc-btn psc-btn-ghost">GitHub</a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-web-card">
+                <div class="psc-mockups">
+                  <div class="psc-browser">
+                    <div class="psc-browser-bar">
+                      <span class="psc-browser-dot"></span><span class="psc-browser-dot"></span><span class="psc-browser-dot"></span>
+                    </div>
+                    <div class="psc-browser-screen">
+                      <img src="https://picsum.photos/seed/web4/800/500" alt="Desktop screenshot of Northline Logistics website" loading="lazy" width="800" height="500">
+                    </div>
+                  </div>
+                  <div class="psc-phone">
+                    <div class="psc-phone-screen">
+                      <img src="https://picsum.photos/seed/web4m/300/560" alt="Mobile screenshot of Northline Logistics website" loading="lazy" width="300" height="560">
+                    </div>
+                  </div>
+                </div>
+                <div class="psc-web-body">
+                  <h3 class="psc-web-title">Northline Logistics — Portal</h3>
+                  <p class="psc-web-desc">Shipment tracking dashboard for internal teams.</p>
+                  <div class="psc-badge-row">
+                    <span class="psc-badge">Vue</span>
+                    <span class="psc-badge">Node.js</span>
+                  </div>
+                  <div class="psc-btn-row">
+                    <a href="#" class="psc-btn psc-btn-primary">Live Demo</a>
+                    <a href="#" class="psc-btn psc-btn-ghost">GitHub</a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-web-card">
+                <div class="psc-mockups">
+                  <div class="psc-browser">
+                    <div class="psc-browser-bar">
+                      <span class="psc-browser-dot"></span><span class="psc-browser-dot"></span><span class="psc-browser-dot"></span>
+                    </div>
+                    <div class="psc-browser-screen">
+                      <img src="https://picsum.photos/seed/web5/800/500" alt="Desktop screenshot of Terra Foods website" loading="lazy" width="800" height="500">
+                    </div>
+                  </div>
+                  <div class="psc-phone">
+                    <div class="psc-phone-screen">
+                      <img src="https://picsum.photos/seed/web5m/300/560" alt="Mobile screenshot of Terra Foods website" loading="lazy" width="300" height="560">
+                    </div>
+                  </div>
+                </div>
+                <div class="psc-web-body">
+                  <h3 class="psc-web-title">Terra Foods — Landing Page</h3>
+                  <p class="psc-web-desc">Single-page product launch site with animated sections.</p>
+                  <div class="psc-badge-row">
+                    <span class="psc-badge">HTML/CSS</span>
+                    <span class="psc-badge">JavaScript</span>
+                  </div>
+                  <div class="psc-btn-row">
+                    <a href="#" class="psc-btn psc-btn-primary">Live Demo</a>
+                    <a href="#" class="psc-btn psc-btn-ghost">GitHub</a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-web-card">
+                <div class="psc-mockups">
+                  <div class="psc-browser">
+                    <div class="psc-browser-bar">
+                      <span class="psc-browser-dot"></span><span class="psc-browser-dot"></span><span class="psc-browser-dot"></span>
+                    </div>
+                    <div class="psc-browser-screen">
+                      <img src="https://picsum.photos/seed/web6/800/500" alt="Desktop screenshot of Ama and Co website" loading="lazy" width="800" height="500">
+                    </div>
+                  </div>
+                  <div class="psc-phone">
+                    <div class="psc-phone-screen">
+                      <img src="https://picsum.photos/seed/web6m/300/560" alt="Mobile screenshot of Ama and Co website" loading="lazy" width="300" height="560">
+                    </div>
+                  </div>
+                </div>
+                <div class="psc-web-body">
+                  <h3 class="psc-web-title">Ama &amp; Co. — Portfolio Site</h3>
+                  <p class="psc-web-desc">A minimal personal portfolio with a CMS-driven blog.</p>
+                  <div class="psc-badge-row">
+                    <span class="psc-badge">Next.js</span>
+                    <span class="psc-badge">Sanity CMS</span>
+                  </div>
+                  <div class="psc-btn-row">
+                    <a href="#" class="psc-btn psc-btn-primary">Live Demo</a>
+                    <a href="#" class="psc-btn psc-btn-ghost">GitHub</a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SECTION 3 — CONTENT CREATION
+  ======================================================= -->
+  <section class="psc-section" aria-label="Content creation portfolio">
+    <div class="psc-inner">
+
+      <div class="psc-header">
+        <div class="psc-heading reveal">
+          <p class="psc-eyebrow">Selected Work</p>
+          <h2 class="psc-title">Content Creation</h2>
+          <p class="psc-subtitle">Videos, social campaigns, reels, and engaging digital content.</p>
+        </div>
+
+        <div class="psc-controls">
+          <span class="psc-counter" role="status" aria-live="polite">
+            <span class="psc-current">01</span> / <span class="psc-total">08</span>
+          </span>
+          <div class="psc-arrows">
+            <button class="psc-arrow psc-prev" aria-label="Previous content project">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="psc-arrow psc-next" aria-label="Next content project">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="psc-carousel" id="carousel-content">
+        <div class="psc-viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Content creation projects">
+          <ul class="psc-track" role="list" style="list-style:none; margin:0; padding:0;">
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-video-card">
+                <div class="psc-video-media">
+                  <span class="psc-platform">Instagram</span>
+                  <img src="https://picsum.photos/seed/vid1/640/860" alt="Reel thumbnail for product launch campaign" loading="lazy" width="640" height="860">
+                  <button class="psc-play" type="button" aria-label="Preview video (placeholder)">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
+                <div class="psc-video-body">
+                  <h3 class="psc-video-title">Nimo Skincare — Launch Reel</h3>
+                  <p class="psc-video-desc">15-second product reveal with motion graphics.</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-video-card">
+                <div class="psc-video-media">
+                  <span class="psc-platform">TikTok</span>
+                  <img src="https://picsum.photos/seed/vid2/640/860" alt="Video thumbnail for gym promo campaign" loading="lazy" width="640" height="860">
+                  <button class="psc-play" type="button" aria-label="Preview video (placeholder)">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
+                <div class="psc-video-body">
+                  <h3 class="psc-video-title">Pulse Fitness — Open Day Promo</h3>
+                  <p class="psc-video-desc">Trend-led video driving sign-ups for launch week.</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-video-card">
+                <div class="psc-video-media">
+                  <span class="psc-platform">YouTube</span>
+                  <img src="https://picsum.photos/seed/vid3/640/860" alt="Video thumbnail for brand story" loading="lazy" width="640" height="860">
+                  <button class="psc-play" type="button" aria-label="Preview video (placeholder)">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
+                <div class="psc-video-body">
+                  <h3 class="psc-video-title">Solace Coffee — Brand Story</h3>
+                  <p class="psc-video-desc">2-minute short film on the roastery's origin.</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-video-card">
+                <div class="psc-video-media">
+                  <span class="psc-platform">Instagram</span>
+                  <img src="https://picsum.photos/seed/vid4/640/860" alt="Reel thumbnail for behind the scenes content" loading="lazy" width="640" height="860">
+                  <button class="psc-play" type="button" aria-label="Preview video (placeholder)">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
+                <div class="psc-video-body">
+                  <h3 class="psc-video-title">Terra Foods — Behind the Scenes</h3>
+                  <p class="psc-video-desc">Farm-to-shelf process series, 6-part reel run.</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-video-card">
+                <div class="psc-video-media">
+                  <span class="psc-platform">TikTok</span>
+                  <img src="https://picsum.photos/seed/vid5/640/860" alt="Video thumbnail for event recap" loading="lazy" width="640" height="860">
+                  <button class="psc-play" type="button" aria-label="Preview video (placeholder)">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
+                <div class="psc-video-body">
+                  <h3 class="psc-video-title">Accra Music Week — Recap</h3>
+                  <p class="psc-video-desc">Highlight edit cut same-day for social release.</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-video-card">
+                <div class="psc-video-media">
+                  <span class="psc-platform">Instagram</span>
+                  <img src="https://picsum.photos/seed/vid6/640/860" alt="Reel thumbnail for testimonial campaign" loading="lazy" width="640" height="860">
+                  <button class="psc-play" type="button" aria-label="Preview video (placeholder)">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
+                <div class="psc-video-body">
+                  <h3 class="psc-video-title">Baobab Realty — Client Story</h3>
+                  <p class="psc-video-desc">Customer testimonial edited for feed and stories.</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-video-card">
+                <div class="psc-video-media">
+                  <span class="psc-platform">YouTube</span>
+                  <img src="https://picsum.photos/seed/vid7/640/860" alt="Video thumbnail for tutorial series" loading="lazy" width="640" height="860">
+                  <button class="psc-play" type="button" aria-label="Preview video (placeholder)">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
+                <div class="psc-video-body">
+                  <h3 class="psc-video-title">Northline Logistics — Explainer</h3>
+                  <p class="psc-video-desc">90-second how-it-works video for the homepage.</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="psc-slide" role="listitem">
+              <article class="psc-video-card">
+                <div class="psc-video-media">
+                  <span class="psc-platform">TikTok</span>
+                  <img src="https://picsum.photos/seed/vid8/640/860" alt="Reel thumbnail for seasonal campaign" loading="lazy" width="640" height="860">
+                  <button class="psc-play" type="button" aria-label="Preview video (placeholder)">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
+                <div class="psc-video-body">
+                  <h3 class="psc-video-title">Ama &amp; Co. — Seasonal Edit</h3>
+                  <p class="psc-video-desc">Holiday campaign teaser, 3-part series.</p>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
   </section>
 
   <!-- TESTIMONIALS -->
@@ -456,5 +1018,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="portfolio.js"></script>
 </body>
 </html>

@@ -128,12 +128,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- CONTACT FORM (mailto handoff) ---------- */
+  /* ---------- CONTACT FORM (real submission via Formspree) ----------
+     1. Create a free account at https://formspree.io
+     2. Create a new form, connected to fngideon1@gmail.com
+     3. Copy the form's endpoint (looks like https://formspree.io/f/xxxxxxx)
+     4. Paste it below, replacing YOUR_FORM_ID
+     Until you do that, submissions fall back to opening the visitor's
+     email app instead (same as before), so nothing is ever fully broken. */
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
   const form = document.getElementById('contactForm');
   const formNote = document.getElementById('formNote');
+  const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+  function setNote(text, type){
+    formNote.textContent = text;
+    formNote.classList.remove('is-error', 'is-success');
+    if (type) formNote.classList.add(type);
+  }
+
+  function sendViaMailto(name, email, message){
+    const subject = encodeURIComponent(`Project enquiry from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    window.location.href = `mailto:fngideon1@gmail.com?subject=${subject}&body=${body}`;
+    setNote('Opening your email app to send this message...', 'is-success');
+  }
 
   if (form){
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const name = document.getElementById('name').value.trim();
@@ -141,16 +163,43 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = document.getElementById('message').value.trim();
 
       if (!name || !email || !message){
-        formNote.textContent = 'Please fill in every field before sending.';
+        setNote('Please fill in every field before sending.', 'is-error');
         return;
       }
 
-      const subject = encodeURIComponent(`Project enquiry from ${name}`);
-      const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-      window.location.href = `mailto:fngideon1@gmail.com?subject=${subject}&body=${body}`;
+      // Endpoint not configured yet — use the mailto fallback directly.
+      if (!FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')){
+        sendViaMailto(name, email, message);
+        form.reset();
+        return;
+      }
 
-      formNote.textContent = 'Opening your email app to send this message...';
-      form.reset();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      setNote('Sending your message...', null);
+
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+
+        if (response.ok){
+          setNote("Message sent — I'll get back to you within a day or two.", 'is-success');
+          form.reset();
+        } else {
+          throw new Error('Form service returned an error');
+        }
+      } catch (err){
+        // Network or service failure — fall back to the visitor's email app
+        // so the message still has a way to reach you.
+        setNote("Couldn't send automatically — opening your email app instead.", 'is-error');
+        sendViaMailto(name, email, message);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
     });
   }
 
