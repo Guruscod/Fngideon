@@ -546,10 +546,9 @@ button{ font-family:inherit; cursor:pointer; }
   font-family:var(--font-mono);
 }
 
-/* ---------- CLIENT LOGOS (small animated marquee) ---------- */
-.logos-strip{ margin-top:64px; }
-.logos-label{
-  text-align:center;
+/* ---------- CLIENT LOGOS (animated marquee, right to left) ---------- */
+.logo-strip{ margin-top:56px; text-align:center; }
+.logo-strip-label{
   font-family:var(--font-mono);
   font-size:12px;
   letter-spacing:0.12em;
@@ -557,20 +556,20 @@ button{ font-family:inherit; cursor:pointer; }
   color:var(--grey);
   margin:0 0 26px;
 }
-.logos-track-wrap{
+.logo-track-wrap{
   overflow:hidden;
   -webkit-mask-image:linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
   mask-image:linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
-.logos-track{
+.logo-track{
   display:flex;
   align-items:center;
   gap:52px;
   width:max-content;
-  animation:logosScroll 24s linear infinite;
+  animation:logoMarquee 22s linear infinite;
 }
-.logos-track-wrap:hover .logos-track{ animation-play-state:paused; }
-@keyframes logosScroll{
+.logo-track-wrap:hover .logo-track{ animation-play-state:paused; }
+@keyframes logoMarquee{
   from{ transform:translateX(0); }
   to{ transform:translateX(-50%); }
 }
@@ -579,6 +578,7 @@ button{ font-family:inherit; cursor:pointer; }
   align-items:center;
   justify-content:center;
   height:34px;
+  flex-shrink:0;
   filter:grayscale(1);
   opacity:0.55;
   transition:filter .3s ease, opacity .3s ease, transform .3s ease;
@@ -594,6 +594,7 @@ button{ font-family:inherit; cursor:pointer; }
   object-fit:contain;
 }
 .logo-fallback{
+  display:none;
   font-family:var(--font-mono);
   font-size:12.5px;
   color:var(--ink);
@@ -808,7 +809,7 @@ button{ font-family:inherit; cursor:pointer; }
   .about, .skills, .services, .testimonials, .contact, .certifications{ padding:80px 0; }
   .tape-track{ font-size:16px; }
   .footer-inner{ flex-direction:column; text-align:center; }
-  .logos-track{ gap:36px; }
+  .logo-track{ gap:36px; }
 }
 
 @media (max-width: 420px){
